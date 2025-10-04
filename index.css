@@ -1,0 +1,35 @@
+
+:root{
+  --bg:#0b1220; --text:#e5e7eb; --muted:#94a3b8;
+  --card:#0f172a; --line:rgba(255,255,255,.08);
+  --primary:#60a5fa; --danger:#ef4444; --ok:#22c55e;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+.app-wrap{min-height:100dvh;display:flex;flex-direction:column}
+.app-main{flex:1;padding:12px}
+.stack{display:flex;flex-direction:column}
+.row{display:flex}.between{justify-content:space-between}.center{align-items:center}.right{justify-content:flex-end}
+.hstack{display:flex;align-items:center;gap:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+@media (max-width:720px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px}
+.pad{padding:12px}
+.title{font-weight:800}
+.sub{color:var(--muted);font-size:13px}
+.muted{color:var(--muted)}
+.label{display:block;font-size:12px;color:var(--muted);margin-bottom:4px}
+.input,select,textarea{width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:#0b1325;color:var(--text)}
+.input:focus,select:focus,textarea:focus{outline:none;border-color:#2452a5}
+.btn{padding:8px 12px;border-radius:12px;border:1px solid var(--line);background:#111a30;color:var(--text);cursor:pointer;font-weight:800}
+.btn:hover{filter:brightness(1.1)} .btn.primary{background:#1a2b55;border-color:#2a4fb3}
+.btn.danger{background:#3a1114;border-color:#7a1d23} .btn.ghost{background:transparent}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:4px 8px;border-radius:999px;border:1px solid var(--line);font-size:12px}
+.badge.shift{background:#12213f}.badge.role{background:#23340c;color:#bde59d}
+a{color:inherit}
+/* sticky bars */
+.app-header{position:sticky;top:0;z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.app-tabbar{position:sticky;bottom:0;z-index:40;background:rgba(11,18,32,.98);backdrop-filter:saturate(180%) blur(6px);border-top:1px solid var(--line)}
+@media (min-width:900px){.app-tabbar{position:fixed;bottom:0;left:0;right:0} body{padding-bottom:68px}}
